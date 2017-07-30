@@ -1,0 +1,1 @@
+export const numOfCheckboxes = 2000
