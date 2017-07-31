@@ -1,21 +1,19 @@
 import React from 'react'
-import Checkbox from './Checkbox'
+import ContCheckbox from '../containers/Checkbox'
+import { numOfCheckboxes } from '../constants/initial'
 
 const Checkboxes = (props) => {
-  function handleChange(num){
-    props.handleChange(num)
-  }
-  function renderCheckboxes(values) {
+  function renderCheckboxes(num) {
     const ar = []
-    values.forEach((el, i)=> {
-      ar.push(<Checkbox key={i} index={i} selected={el} handleChange={handleChange}/>)
-    })
+    for (let i = 0; i < num; i++){
+      ar.push(<ContCheckbox key={i} index={i}/>)
+    }
     return ar
   }
 
   return (
     <div>
-      {renderCheckboxes(props.values)}
+      {renderCheckboxes(numOfCheckboxes)}
     </div>
   )
 }

@@ -1,12 +1,14 @@
 import React from 'react'
 
 const Checkbox = (props) => {
-  function handleChange() {
-    props.handleChange(props.index)
-  }
+  console.log("render Checkbox");
   return (
     <div>
-      <input type="checkbox" defaultChecked={props.selected} onChange={handleChange}/>Some input
+      <input
+        type="checkbox"
+        defaultChecked={props.chbState.value}
+        onChange={(e) => {props.change(props.index, props.chbState.value)}}
+      />Some input
     </div>
   )
 }

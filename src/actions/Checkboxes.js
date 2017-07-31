@@ -1,6 +1,9 @@
-export function change(num) {
+export function change(index, value) {
   return {
     type: "CHANGE",
-    payload: num
+    payload: {
+      index,
+      value: !value
+    }
   }
 }
