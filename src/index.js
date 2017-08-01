@@ -16,9 +16,4 @@ ReactDOM.render(
 )
 registerServiceWorker()
 
-// store.dispatch({
-//   type: "TRY",
-//   payload: "just try"
-// })
-
 

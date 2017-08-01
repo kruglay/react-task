@@ -6,8 +6,8 @@ const Checkbox = (props) => {
     <div>
       <input
         type="checkbox"
-        defaultChecked={props.chbState.value}
-        onChange={(e) => {props.change(props.index, props.chbState.value)}}
+        defaultChecked={props.value}
+        onChange={(e) => {props.change(props.index, props.value)}}
       />Some input
     </div>
   )

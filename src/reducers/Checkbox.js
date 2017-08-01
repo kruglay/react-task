@@ -1,19 +1,19 @@
+import { numOfCheckboxes } from '../constants/initial'
 
 const initialState = {
-  index: -1,
-  value: false
+  values: Array(numOfCheckboxes).fill(false)
 }
 
 const checkboxReducer = (state = initialState, action) => {
   let newState = {}
   switch (action.type) {
     case "CHANGE":
-      newState = { ...action.payload }
+      newState = { ...state }
+      newState.values[action.payload.index] = action.payload.value
       return newState
     case "TRY":
       return newState = {
-        index: -1,
-        value: "checkboxReducer"
+        values: "checkboxReducer"
       }
     default:
       return newState = {...state}

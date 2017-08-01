@@ -1,12 +1,13 @@
-import {createStore} from 'redux'
+import {createStore, applyMiddleware} from 'redux'
 import checkboxReducer from './reducers/Checkbox'
 import {combineReducers} from 'redux'
+import logger from 'redux-logger'
 
 const store = createStore(
   combineReducers({
     checkboxReducer
   }),
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+  applyMiddleware(logger)
 )
 
 export default store

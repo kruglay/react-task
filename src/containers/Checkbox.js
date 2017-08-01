@@ -7,9 +7,14 @@ const ContCheckbox = (props) => {
   return <Checkbox {...props}/>
 }
 
-const mapStateToProps = (state) => {
-  return {
-    chbState: state.checkboxReducer
+const mapStateToProps = (_, initialProps) => {
+  const { index } = initialProps
+  return(state, props) => {
+    const values = state.checkboxReducer.values
+    return  {
+      ...props,
+      value: values[index]
+    }
   }
 }
 
@@ -21,4 +26,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Checkbox)
+export default  connect(mapStateToProps, mapDispatchToProps)(Checkbox)
